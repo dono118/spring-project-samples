@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icode.springboot.mapper.EmpMapper">
+    <select id="getEmpById" resultType="com.icode.springboot.bean.Emp">
+        select * from emp where id = #{id}
+    </select>
+
+    <insert id="insertEmp" useGeneratedKeys="true" keyProperty="id">
+        insert into emp(firstName,email,gender,dept_id) values (#{firstName},#{email},#{gender},#{deptId})
+    </insert>
+</mapper>
